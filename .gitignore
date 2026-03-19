@@ -1,0 +1,19 @@
+# Node & Vite
+frontend/node_modules
+frontend/dist
+frontend/.vite
+
+# Python
+backend/.venv
+backend/__pycache__
+backend/data/tickets.db
+backend/.env
+
+# IDE & OS
+.env
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+*.swp
+.DS_Store
