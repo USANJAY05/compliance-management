@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenClaw Ticketing System (React + Flask)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/.openclaw/workspace/repos/local/ticketing-system
+ExecStart=/bin/bash -lc '/root/.openclaw/workspace/repos/local/ticketing-system/run.sh'
+Restart=always
+RestartSec=5
+User=root
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=append:/root/.openclaw/workspace/repos/local/ticketing-system/ticketing.log
+StandardError=append:/root/.openclaw/workspace/repos/local/ticketing-system/ticketing.log
+
+[Install]
+WantedBy=multi-user.target

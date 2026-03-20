@@ -64,3 +64,16 @@ bash scripts/agent_guidance.sh
 ## Compliance Storage
 
 Tickets persist in the SQLite database at `backend/data/tickets.db`. Treat this as compliance storage: encrypt or back it up per policy, and limit access to authorized personnel only.
+
+## Startup Automation
+
+To keep the ticketing stack running during boots, install the provided systemd unit (`systemd/ticketing.service`):
+
+```bash
+sudo cp systemd/ticketing.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable ticketing.service
+sudo systemctl start ticketing.service
+```
+
+The service launches `run.sh`, which prepares the backend venv, starts Flask on port 5000, launches the Vite dev server on port 3000, and restarts automatically on failure. Adjust the unit if you relocate the repo or need different logging paths.
