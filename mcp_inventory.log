@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/sanjaysanjay/Documents/projects/compliance-management/backend/mcp_inventory.py", line 9, in <module>
+    mcp = FastMCP("compliance-inventory-mcp", description="Autonomous Asset & Hardware Inventory Tracking Server")
+TypeError: FastMCP.__init__() got an unexpected keyword argument 'description'

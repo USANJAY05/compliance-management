@@ -1,7 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  background: #e2e8f0;
-  color: #0f172a;
+  /* Light Theme Specific Colors */
+  --bg-main: #f8fafc;
+  --bg-panel: rgba(255, 255, 255, 0.75);
+  --bg-hover: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-heading: #020617;
+  --text-body: #475569;
+  --border-color: rgba(203, 213, 225, 0.6);
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --purple: #8b5cf6;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+:root[data-theme='dark'] {
+  /* Dark Theme Specific Colors */
+  --bg-main: #0b0f19;
+  --bg-panel: rgba(15, 23, 42, 0.6);
+  --bg-hover: rgba(51, 65, 85, 0.7);
+  --text-primary: #f8fafc;
+  --text-heading: #ffffff;
+  --text-body: #94a3b8;
+  --border-color: rgba(71, 85, 105, 0.3);
+  --primary: #6366f1;
+  --primary-hover: #818cf8;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  --purple: #a78bfa;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 25px 35px -5px rgba(0, 0, 0, 0.5);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -10,9 +50,55 @@
 
 body {
   margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background-color: var(--bg-main);
+  background-image: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text-primary);
   min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #root {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-action.locked,
+.btn-submit:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+  pointer-events: none;
+  filter: grayscale(0.5);
 }

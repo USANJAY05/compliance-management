@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sanjay",
+    "role": "owner",
+    "password": "admin@123",
+    "team": "Executive",
+    "region": "Global"
+  },
+  {
+    "id": "agent1",
+    "role": "agent",
+    "password": "1234",
+    "team": "Research",
+    "region": "North America"
+  },
+  {
+    "id": "agent2",
+    "role": "agent",
+    "password": "123",
+    "team": "Research",
+    "region": "EMEA"
+  },
+  {
+    "id": "sanjay_agent",
+    "role": "agent",
+    "password": "test",
+    "team": "General",
+    "region": "Global"
+  }
+]
