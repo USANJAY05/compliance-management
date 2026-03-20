@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/sanjaysanjay/Documents/projects/compliance-management/backend/mcp_hr.py", line 9, in <module>
-    mcp = FastMCP("compliance-hr-mcp", description="Autonomous HR & Leave Management Integration Server")
-TypeError: FastMCP.__init__() got an unexpected keyword argument 'description'

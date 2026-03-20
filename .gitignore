@@ -17,3 +17,13 @@ backend/.env
 __pycache__
 *.swp
 .DS_Store
+
+# Logs and PIDs
+*.log
+*.pid
+backend/data/*.json
+!backend/data/users.json
+!backend/data/regions.json
+!backend/data/teams.json
+!backend/data/roles.json
+!backend/data/ticket_types.json
